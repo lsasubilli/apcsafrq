@@ -1,0 +1,27 @@
+import java.util.ArrayList;
+public class Main{
+    public static void main(String[]args){
+
+    }
+    public boolean simulate(){
+        boolean goalReached;
+        int sum = 0;
+        for(int i=0;i<maxhops;i++){
+            sum+=hopDistance();
+        }
+        if(goalDistance<sum){
+            return false;
+        }
+        return true;
+    }
+    public double runSimulations(int num){
+        int max = num;
+        int count = 0;
+        for(int i=0;i<num;i++){
+            if(simulate()){
+                count++;
+            }
+        }
+        return  (double)(count/max);
+    }
+}
